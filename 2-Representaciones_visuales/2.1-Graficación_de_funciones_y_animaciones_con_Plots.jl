@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.19
+# v0.19.22
 
 using Markdown
 using InteractiveUtils
@@ -54,6 +54,9 @@ md" ### Gráficas bidimensionales
 # ╔═╡ 67c22c14-24a6-4080-803b-fba2be7d0fa4
 plot(sin,0:2π) # Grafica "sin" en el rango 0:2π
 
+# ╔═╡ 75f5b2d3-3675-46c8-adbe-95a2ec4c7d46
+
+
 # ╔═╡ 22a9aee4-4c6d-47d3-8cca-e41e542a84ed
 md"""
 
@@ -101,7 +104,7 @@ md"  "
 
 # ╔═╡ d2472d6a-7072-49ae-ba55-207db17be3ca
 begin
-    l = 2          # ¡Cambia el valor de l y corre la celda,
+    l = 0.1 # ¡Cambia el valor de l y corre la celda,
     plot(sin,0:l:2π) # y observa qué sucede con la gráfica!
 end
 
@@ -172,7 +175,7 @@ md"De hecho, agregarle un atributo `marker = true` a una gráfica tipo `plot` no
 
 # ╔═╡ fc94b6e8-cae9-46bc-9ac4-9cee5e86c8ee
 begin
-	plot(sin,0:0.25:2π, title = "plot y scatter", xlabel = "x", ylabel = "sin(x)", color = "darkorange", label = "plot", marker = true)
+	plot(sin,0:0.25:2π, title = "plot y scatter", xlabel = "x", ylabel = L"\sin(x)", color = "darkorange", label = "plot", marker = true, legend = false)
 end
 
 # ╔═╡ 77a60b5d-ad7f-4c44-a68d-694417619668
@@ -182,6 +185,18 @@ md"por lo que no es necesario llamar dos funciones cuando querramos hacer esto. 
 md""" **Ejercicio** Define un parámetro interactivo `d` que controle el nivel de detalle de una gráfica tipo `plot` de las funciones `sin` y `cos` en el intervalo $[-\pi,\pi]$, con el título "Funciones trigonométricas", donde cada función se grafique con un color diferente y la leyenda indique el nombre de cada función.
 
 """
+
+# ╔═╡ df8575f7-8ca8-46b2-89de-ca2a0f97d485
+@bind d Slider(0.2:0.05:1, default=0.5)
+
+# ╔═╡ 3810bc60-619d-4a94-a729-29c5e5a66fc7
+d
+
+# ╔═╡ 2652d16d-2c0b-4ef0-b984-21b4a368871b
+begin
+	plot(sin, -π:d:π, title="Funciones trigonometricas", xlabel="x", ylabel="F(x)", color="lightblue", label= "sin(x)", marker = true)
+	plot!(cos, -π:d:π, title="Funciones trigonometricas", xlabel="x", ylabel="F(x)", color="lightpink", label= "cos(x)", marker = true)
+end 
 
 # ╔═╡ acfe0334-c7aa-471f-b39e-8276e2e3dd42
 md"""#### El paquete `LaTeXStrings`
@@ -477,7 +492,17 @@ md"""**Ejercicio** Haz un código donde definas cuatro variables `h`, `r`, `θ` 
 Sugerencia: Repasa las ecuaciones cinemáticaticas del tiro parabólico e investiga los atributos `xaxis` y `yaxis` para poder fijar los ejes de la gráfica durante la animación."""
 
 # ╔═╡ 50f7f46b-081e-4b07-94af-1331b33a7c7f
-# Tu código (comentado) va aquí :D
+	# Tu código (comentado) va aquí :D
+#=begin
+		h = 20    # Definimos los valores de los parámetros.
+		r = 40
+		θ = 30
+	
+	trayecto = @animate for t in 0:0.1:final
+	f(x) = h + (r*sin(θ)*t) - ((1/2)*(9.81)*t^2)
+	plot(f.(range(0,final, step= 0.1)*t), xaxis=("Tiempo(s)"), yaxis=("f(x)"), label="partícula", linestyle=:dash, marker=:dash, title="Tiro parabólico")
+	end
+end=#
 
 # ╔═╡ 59ec3890-303c-436a-8043-8e6bc9c427ed
 md"**Ejercicio** Crea una función que tome parámetros `h`, `r`, `θ` y `t`, y haga lo descrito en el Ejercicio anterior."
@@ -491,6 +516,21 @@ md"""**Ejercicio** Crea una animación de cómo la superficie obtenida de la fun
 
 # ╔═╡ 4e68ad0c-17ef-41f7-b9fe-8561415bb7f2
 # Tu código (comentado) va aquí :D
+#=begin
+	x = 2
+	y = 0.5
+	anim4 = Plots.Animation()
+	h(x,y)=cos(x)+sin(y)
+		
+	for t in 0:0.1:2π # para t ∈ 0:0.1:2π
+		plot(f.( range(0,2π, step = 0.1) .- t),
+		     legend = false, title = L"h(x,y)=cos(x)+sin(y)")
+		Plots.frame(anim4)
+	end
+
+	gif(anim4, "desplazo_en_eje_y", fps = 30)
+	
+end=#
 
 # ╔═╡ 88299b4d-2a7d-4c18-956e-c6e75473c658
 md" ## Recursos complementarios
@@ -520,7 +560,7 @@ PlutoUI = "~0.7.38"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.8.4"
+julia_version = "1.8.5"
 manifest_format = "2.0"
 project_hash = "77e2734aeac55d5109eeed492b1ea958eae44caf"
 
@@ -1451,6 +1491,7 @@ version = "0.9.1+5"
 # ╟─b3f850d8-60d4-4798-9beb-d42a9cdac9ae
 # ╟─8c5b9695-3625-4105-8a4f-9358e208115c
 # ╠═67c22c14-24a6-4080-803b-fba2be7d0fa4
+# ╠═75f5b2d3-3675-46c8-adbe-95a2ec4c7d46
 # ╟─22a9aee4-4c6d-47d3-8cca-e41e542a84ed
 # ╠═9bfbf61b-66b5-42d3-878b-fb02dd6d41ee
 # ╟─e16ca2f5-4af7-4d16-b76e-4f124e1ddbbf
@@ -1475,6 +1516,9 @@ version = "0.9.1+5"
 # ╠═fc94b6e8-cae9-46bc-9ac4-9cee5e86c8ee
 # ╟─77a60b5d-ad7f-4c44-a68d-694417619668
 # ╟─8b8aff3c-3d88-4022-bc86-b75ebefde2a3
+# ╠═3810bc60-619d-4a94-a729-29c5e5a66fc7
+# ╠═df8575f7-8ca8-46b2-89de-ca2a0f97d485
+# ╠═2652d16d-2c0b-4ef0-b984-21b4a368871b
 # ╟─acfe0334-c7aa-471f-b39e-8276e2e3dd42
 # ╠═8302701b-02ac-4d35-b7de-5dec8fe701fb
 # ╟─02f9778e-21c8-42db-bed6-95a20d592f22

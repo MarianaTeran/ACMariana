@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.4
+# v0.19.22
 
 using Markdown
 using InteractiveUtils
@@ -79,7 +79,7 @@ imshow(testimage("mri"))
 # ╔═╡ 775f4a1d-a724-4aa6-a5c5-835e86d6ba49
 md"La principal ventaja de `ImageView` es que nos permite obtener información importante sobre una imagen _mientras interactuamos con ella_; además, es posible utilizarlo incluso cuando estamos programando desde una terminal virtual -las cuales, usualmente, no tienen interfaz gráfica.
 
-Las interfaces de _notebooks_ como Jupyter y Pluto usualmente tienen algunas funcionalidades integradas para mostrar imágenes, como se ve en la primer celda de código de esta sección; sin embargo, esto no significa que estas funcionalidades cubran todos los casos. Para ver un ejemplo, corre la siguiente celda de código:"
+Las interfaces de _notebooks_ como Jupyter y Pluto usualmente tienen algunas funcionalidades integradas para mostrar imágenes, como se ve en la primer celda de código de esta sección; sin embargo, esto no significa que estas funcionalidades cubran todos los casos. Para ver un ejemplo, ejecuta la siguiente celda de código:"
 
 # ╔═╡ 7066f5f0-3d6d-4f24-a965-1bc2829f3ad6
 testimage("mri")
@@ -125,6 +125,126 @@ nariz = michi[rango_renglones, rango_columnas]
 # ╔═╡ 768e7b46-f7ef-44f8-b69f-f0a9fd4d797f
 md"**Ejercicio** Define una variable `arte_de_pixeles` como un arreglo bidimensional pequeño de `8x8` entradas con todas las celdas en blanco. Luego, edita las celdas de tu arreglo para hacer un poco de arte de pixeles (¡Habrá puntos extra para las imágenes más **originales**!). Pueden consultar algunas imágenes para tomar inspiración [aquí](https://duckduckgo.com/?q=pixel+art&t=h_&iax=images&ia=images)."
 
+# ╔═╡ 36e582fc-b862-4d34-ace2-5cba9fdc3dc3
+arte_de_pixeles = zeros(RGB{Float64}, 8,8)
+
+# ╔═╡ 33751a1f-9220-4c10-88ae-310744d59461
+arte_de_pixeles[1,1]= RGB(1,1,0)
+
+# ╔═╡ ad768715-e569-4ee0-b673-de1184ae4892
+arte_de_pixeles[1,2]= RGB(1,1,0)
+
+# ╔═╡ 7f8ab5b8-9247-4769-83ce-864e71e0f52b
+arte_de_pixeles[2,3]= RGB(1,1,0)
+
+# ╔═╡ 220d77d5-8cf3-4a02-9a68-0e0fc000cc3f
+arte_de_pixeles[2,1]= RGB(1,1,0)
+
+# ╔═╡ f567fbce-3c55-46f8-85de-1e1597007236
+arte_de_pixeles[2,2]= RGB(1,1,0)
+
+# ╔═╡ bf7d57fc-d4b4-4767-b518-9eedd0288c3a
+arte_de_pixeles[2,4]= RGB(0,1,1)
+
+# ╔═╡ 544d4f58-5401-47a0-b869-a68e3d363b34
+arte_de_pixeles[2,7]= RGB(0,1,1)
+
+# ╔═╡ 79892cc5-4c1b-4ddf-a1c9-f2a050ef69d0
+arte_de_pixeles[1,4]= RGB(1,1,1)
+
+# ╔═╡ bfe25924-dabe-4883-9390-8c3a36235006
+arte_de_pixeles[1,5]= RGB(1,1,1)
+
+# ╔═╡ e1ebd52f-c7e2-4a40-8aa5-0898c166a33b
+arte_de_pixeles[2,5]= RGB(1,1,1)
+
+# ╔═╡ 2abafe50-e333-4429-b908-166d3aeaea68
+arte_de_pixeles[1,7]= RGB(1,1,1)
+
+# ╔═╡ bc9cbe90-2f31-46c4-8c93-4ca82abc0d43
+arte_de_pixeles[1,5]= RGB(1,1,1)
+
+# ╔═╡ fef4ff01-e184-4d52-a682-1549d6c038b1
+arte_de_pixeles[6,5]= RGB(1,1,1)
+
+# ╔═╡ 7d7fb4d6-8a83-4d32-a656-934bcedaf553
+arte_de_pixeles[7,5]= RGB(1,1,1)
+
+# ╔═╡ ad6a1c85-1a1d-43a3-ae40-05ea17afa847
+arte_de_pixeles[8,7]= RGB(1,0,1)
+
+# ╔═╡ 0753f690-e264-4dd5-b456-2f1177d264f5
+arte_de_pixeles[8,6]= RGB(1,0,1)
+
+# ╔═╡ 575a53fb-16f0-44d2-a541-2eb5713b069f
+arte_de_pixeles[8,5]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ 7762eaf1-ecf2-4ca5-aff4-050f59f85143
+arte_de_pixeles[8,4]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ b5a6e856-4aa7-48be-9b5c-1ca14d0d89a5
+arte_de_pixeles[8,3]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ c909c6ff-0a29-45a7-be7f-43e3053fc7e5
+arte_de_pixeles[4,5]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ 112c6d18-0d56-497f-9787-f7529e07d373
+arte_de_pixeles[5,5]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ c135e441-e583-426a-b544-5141fecd1e50
+arte_de_pixeles[5,6]= RGB{N0f8}(250/255,193/255,190/255)
+
+# ╔═╡ ca167f7d-6dbc-40a9-9eb8-2f5cc7827e40
+arte_de_pixeles[1,3]= RGB{N0f8}(255/255,128/255,0/255)
+
+# ╔═╡ 30a7363f-3bf1-4b2d-8d10-66bfbc687894
+arte_de_pixeles[2,8]= RGB{N0f8}(255/255,128/255,0/255)
+
+# ╔═╡ c412a3e2-376f-4289-9349-41579957edc9
+arte_de_pixeles[1,8]= RGB{N0f8}(140/255,80/255,60/255)
+
+# ╔═╡ 29dec1c8-f7c1-4eba-919c-7052c21839aa
+arte_de_pixeles[4,4]= RGB{N0f8}(140/255,80/255,60/255)
+
+# ╔═╡ f5193ec7-f848-4121-b3c1-425da8099f3c
+arte_de_pixeles[3,3]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ a44e01a2-b9fd-4ea3-8b0b-27ddf38a4321
+arte_de_pixeles[3,4]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ cbe07596-ef1d-4d5f-a62f-ef9c01e0f1dc
+arte_de_pixeles[3,5]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ e43e9ccc-a3ea-46f8-b6c4-162effb54c88
+arte_de_pixeles[3,6]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ c462cf2f-bebf-483b-ab72-f7debbd62744
+arte_de_pixeles[3,7]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ e67ced24-05a8-4e60-b339-9b6adbd4a809
+arte_de_pixeles[1,6]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ 6c4d0d9e-3cc8-4a81-bc76-03159c5c52c8
+arte_de_pixeles[2,6]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ 9e851578-a45d-4997-82dd-d31c01b714aa
+arte_de_pixeles[5,4]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ 139c858d-2283-4ae8-8d59-c8cd3fd01e81
+arte_de_pixeles[5,4]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ aab81995-53c6-406e-9c9f-450e18b703a5
+arte_de_pixeles[6,4]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ 23356b96-6f75-43ae-a018-35d2baf6e928
+arte_de_pixeles[6,3]= RGB{N0f8}(250/255,230/255,210/255)
+
+# ╔═╡ 9fa607a2-5b34-447c-bf44-96d472a29213
+arte_de_pixeles
+
+# ╔═╡ fbe324ce-815a-4de6-9da8-3981c8850e8a
+save("Didi.png",arte_de_pixeles)
+
 # ╔═╡ 8270b927-ac96-4e45-8c26-47995b036313
 md""" ## Guardar imágenes
 
@@ -139,6 +259,9 @@ save("gato.png",michi)
 md"## Recursos complementarios
 * [Tutoriales](https://juliaimages.org/latest/tutorials/arrays_colors/) y [demostraciones](https://juliaimages.org/latest/examples/#demonstrations) de JuliaImages.
 * Lección [Images as Data and Arrrays](https://computationalthinking.mit.edu/Spring21/images/) del curso de [Computational Thinking](https://computationalthinking.mit.edu/Spring21/) del MIT."
+
+# ╔═╡ d587b6da-d97d-4186-91f1-92b68f5106c4
+
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -161,8 +284,9 @@ TestImages = "~1.6.2"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.7.2"
+julia_version = "1.8.5"
 manifest_format = "2.0"
+project_hash = "38973859b9ee0a685dd323e904273799a1132083"
 
 [[deps.ATK_jll]]
 deps = ["Artifacts", "Glib_jll", "JLLWrappers", "Libdl", "Pkg"]
@@ -190,6 +314,7 @@ version = "3.3.3"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
+version = "1.1.1"
 
 [[deps.ArnoldiMethod]]
 deps = ["LinearAlgebra", "Random", "StaticArrays"]
@@ -239,7 +364,7 @@ uuid = "159f3aea-2a34-519c-b102-8c37f9878175"
 version = "1.0.5"
 
 [[deps.Cairo_jll]]
-deps = ["Artifacts", "Bzip2_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "JLLWrappers", "LZO_jll", "Libdl", "Pixman_jll", "Pkg", "Xorg_libXext_jll", "Xorg_libXrender_jll", "Zlib_jll", "libpng_jll"]
+deps = ["Artifacts", "Bzip2_jll", "CompilerSupportLibraries_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "JLLWrappers", "LZO_jll", "Libdl", "Pixman_jll", "Pkg", "Xorg_libXext_jll", "Xorg_libXrender_jll", "Zlib_jll", "libpng_jll"]
 git-tree-sha1 = "4b859a208b2397a7a623a03449e4636bdb17bcf2"
 uuid = "83423d85-b0ee-5818-9007-b63ccbeb887a"
 version = "1.16.1+1"
@@ -301,6 +426,7 @@ version = "3.41.0"
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
+version = "1.0.1+0"
 
 [[deps.ComputationalResources]]
 git-tree-sha1 = "52cb3ec90e8a8bea0e62e275ba577ad0f74821f7"
@@ -360,8 +486,9 @@ uuid = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 version = "0.8.6"
 
 [[deps.Downloads]]
-deps = ["ArgTools", "LibCURL", "NetworkOptions"]
+deps = ["ArgTools", "FileWatching", "LibCURL", "NetworkOptions"]
 uuid = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
+version = "1.6.0"
 
 [[deps.DualNumbers]]
 deps = ["Calculus", "NaNMath", "SpecialFunctions"]
@@ -405,6 +532,9 @@ git-tree-sha1 = "67551df041955cc6ee2ed098718c8fcd7fc7aebe"
 uuid = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
 version = "1.12.0"
 
+[[deps.FileWatching]]
+uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
+
 [[deps.FixedPointNumbers]]
 deps = ["Statistics"]
 git-tree-sha1 = "335bfdceacc84c5cdf16aadc768aa5ddfc5383cc"
@@ -443,9 +573,9 @@ version = "0.21.0+0"
 
 [[deps.Ghostscript_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "78e2c69783c9753a91cdae88a8d432be85a2ab5e"
+git-tree-sha1 = "43ba3d3c82c18d88471cfd2924931658838c9d8f"
 uuid = "61579ee1-b43e-5ca0-a5da-69d92c66a64b"
-version = "9.55.0+0"
+version = "9.55.0+4"
 
 [[deps.Glib_jll]]
 deps = ["Artifacts", "Gettext_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Libiconv_jll", "Libmount_jll", "PCRE_jll", "Pkg", "Zlib_jll"]
@@ -561,9 +691,9 @@ version = "1.2.1"
 
 [[deps.ImageMagick_jll]]
 deps = ["Artifacts", "Ghostscript_jll", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Libtiff_jll", "Pkg", "Zlib_jll", "libpng_jll"]
-git-tree-sha1 = "f025b79883f361fa1bd80ad132773161d231fd9f"
+git-tree-sha1 = "124626988534986113cfd876e3093e4a03890f58"
 uuid = "c73af94c-d91f-53ed-93a7-00f77d67a9d7"
-version = "6.9.12+2"
+version = "6.9.12+3"
 
 [[deps.ImageMetadata]]
 deps = ["AxisArrays", "ImageAxes", "ImageBase", "ImageCore"]
@@ -716,10 +846,12 @@ uuid = "4af54fe1-eca0-43a8-85a7-787d91b784e3"
 [[deps.LibCURL]]
 deps = ["LibCURL_jll", "MozillaCACerts_jll"]
 uuid = "b27032c2-a3e7-50c8-80cd-2d36dbcbfd21"
+version = "0.6.3"
 
 [[deps.LibCURL_jll]]
 deps = ["Artifacts", "LibSSH2_jll", "Libdl", "MbedTLS_jll", "Zlib_jll", "nghttp2_jll"]
 uuid = "deac9b47-8bc7-5906-a0fe-35ac56dc84c0"
+version = "7.84.0+0"
 
 [[deps.LibGit2]]
 deps = ["Base64", "NetworkOptions", "Printf", "SHA"]
@@ -728,6 +860,7 @@ uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
 [[deps.LibSSH2_jll]]
 deps = ["Artifacts", "Libdl", "MbedTLS_jll"]
 uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
+version = "1.10.2+0"
 
 [[deps.Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
@@ -764,9 +897,9 @@ version = "1.42.0+0"
 
 [[deps.Libiconv_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "42b62845d70a619f063a7da093d995ec8e15e778"
+git-tree-sha1 = "c7cb1f5d892775ba13767a87c7ada0b980ea0a71"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
-version = "1.16.1+1"
+version = "1.16.1+2"
 
 [[deps.Libmount_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -829,6 +962,7 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 [[deps.MbedTLS_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
+version = "2.28.0+0"
 
 [[deps.MetaGraphs]]
 deps = ["Graphs", "JLD2", "Random"]
@@ -853,6 +987,7 @@ version = "0.3.3"
 
 [[deps.MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
+version = "2022.2.1"
 
 [[deps.NaNMath]]
 git-tree-sha1 = "b086b7ea07f8e38cf122f5016af580881ac914fe"
@@ -873,6 +1008,7 @@ version = "1.0.2"
 
 [[deps.NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
+version = "1.2.0"
 
 [[deps.OffsetArrays]]
 deps = ["Adapt"]
@@ -883,6 +1019,7 @@ version = "1.10.8"
 [[deps.OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
+version = "0.3.20+0"
 
 [[deps.OpenEXR]]
 deps = ["Colors", "FileIO", "OpenEXR_jll"]
@@ -899,6 +1036,7 @@ version = "3.1.1+0"
 [[deps.OpenLibm_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "05823500-19ac-5b8b-9628-191a04bc5112"
+version = "0.8.1+0"
 
 [[deps.OpenSpecFun_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
@@ -956,6 +1094,7 @@ version = "0.40.1+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+version = "1.8.0"
 
 [[deps.PkgVersion]]
 deps = ["Pkg"]
@@ -1052,6 +1191,7 @@ version = "1.1.0"
 
 [[deps.SHA]]
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+version = "0.7.0"
 
 [[deps.Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
@@ -1139,10 +1279,12 @@ version = "0.11.2"
 [[deps.TOML]]
 deps = ["Dates"]
 uuid = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+version = "1.0.0"
 
 [[deps.Tar]]
 deps = ["ArgTools", "SHA"]
 uuid = "a4e569a6-e804-4fa4-b0f3-eef7a1d5b13e"
+version = "1.10.1"
 
 [[deps.TensorCore]]
 deps = ["LinearAlgebra"]
@@ -1337,6 +1479,7 @@ version = "1.4.0+3"
 [[deps.Zlib_jll]]
 deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
+version = "1.2.12+3"
 
 [[deps.Zstd_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -1383,6 +1526,7 @@ version = "4.3.0+4"
 [[deps.libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl", "OpenBLAS_jll"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
+version = "5.1.1+0"
 
 [[deps.libpng_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Zlib_jll"]
@@ -1399,10 +1543,12 @@ version = "1.8.6+1"
 [[deps.nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850ede-7688-5339-a07c-302acd2aaf8d"
+version = "1.48.0+0"
 
 [[deps.p7zip_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
+version = "17.4.0+0"
 
 [[deps.xkbcommon_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Wayland_jll", "Wayland_protocols_jll", "Xorg_libxcb_jll", "Xorg_xkeyboard_config_jll"]
@@ -1434,8 +1580,49 @@ version = "0.9.1+5"
 # ╠═25541a59-3f11-4d5c-afe9-0e3a287ca5c2
 # ╠═176d687c-acf1-4516-9c45-0f52800bfcf3
 # ╟─768e7b46-f7ef-44f8-b69f-f0a9fd4d797f
+# ╠═36e582fc-b862-4d34-ace2-5cba9fdc3dc3
+# ╠═33751a1f-9220-4c10-88ae-310744d59461
+# ╠═ad768715-e569-4ee0-b673-de1184ae4892
+# ╠═7f8ab5b8-9247-4769-83ce-864e71e0f52b
+# ╠═220d77d5-8cf3-4a02-9a68-0e0fc000cc3f
+# ╠═f567fbce-3c55-46f8-85de-1e1597007236
+# ╠═bf7d57fc-d4b4-4767-b518-9eedd0288c3a
+# ╠═544d4f58-5401-47a0-b869-a68e3d363b34
+# ╠═79892cc5-4c1b-4ddf-a1c9-f2a050ef69d0
+# ╠═bfe25924-dabe-4883-9390-8c3a36235006
+# ╠═e1ebd52f-c7e2-4a40-8aa5-0898c166a33b
+# ╠═2abafe50-e333-4429-b908-166d3aeaea68
+# ╠═bc9cbe90-2f31-46c4-8c93-4ca82abc0d43
+# ╠═fef4ff01-e184-4d52-a682-1549d6c038b1
+# ╠═7d7fb4d6-8a83-4d32-a656-934bcedaf553
+# ╠═ad6a1c85-1a1d-43a3-ae40-05ea17afa847
+# ╠═0753f690-e264-4dd5-b456-2f1177d264f5
+# ╠═575a53fb-16f0-44d2-a541-2eb5713b069f
+# ╠═7762eaf1-ecf2-4ca5-aff4-050f59f85143
+# ╠═b5a6e856-4aa7-48be-9b5c-1ca14d0d89a5
+# ╠═c909c6ff-0a29-45a7-be7f-43e3053fc7e5
+# ╠═112c6d18-0d56-497f-9787-f7529e07d373
+# ╠═c135e441-e583-426a-b544-5141fecd1e50
+# ╠═ca167f7d-6dbc-40a9-9eb8-2f5cc7827e40
+# ╠═30a7363f-3bf1-4b2d-8d10-66bfbc687894
+# ╠═c412a3e2-376f-4289-9349-41579957edc9
+# ╠═29dec1c8-f7c1-4eba-919c-7052c21839aa
+# ╠═f5193ec7-f848-4121-b3c1-425da8099f3c
+# ╠═a44e01a2-b9fd-4ea3-8b0b-27ddf38a4321
+# ╠═cbe07596-ef1d-4d5f-a62f-ef9c01e0f1dc
+# ╠═e43e9ccc-a3ea-46f8-b6c4-162effb54c88
+# ╠═c462cf2f-bebf-483b-ab72-f7debbd62744
+# ╠═e67ced24-05a8-4e60-b339-9b6adbd4a809
+# ╠═6c4d0d9e-3cc8-4a81-bc76-03159c5c52c8
+# ╠═9e851578-a45d-4997-82dd-d31c01b714aa
+# ╠═139c858d-2283-4ae8-8d59-c8cd3fd01e81
+# ╠═aab81995-53c6-406e-9c9f-450e18b703a5
+# ╠═23356b96-6f75-43ae-a018-35d2baf6e928
+# ╠═9fa607a2-5b34-447c-bf44-96d472a29213
+# ╠═fbe324ce-815a-4de6-9da8-3981c8850e8a
 # ╟─8270b927-ac96-4e45-8c26-47995b036313
 # ╠═3e886602-1dbe-4000-8993-eab5d9edae54
 # ╟─47dbad09-c809-4a65-b25b-f3e049efb69f
+# ╠═d587b6da-d97d-4186-91f1-92b68f5106c4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
